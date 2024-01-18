@@ -1,5 +1,7 @@
+import { Curriculum } from "./components/Curriculum";
+
 function App() {
-	return;
+	return <Curriculum></Curriculum>;
 }
 
 export default App;
