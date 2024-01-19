@@ -1,7 +1,15 @@
+import { Form } from "./components/Form";
 import { Curriculum } from "./components/Curriculum";
 
 function App() {
-	return <Curriculum></Curriculum>;
+	return (
+		<>
+			<Form
+			></Form>
+			<Curriculum
+			></Curriculum>
+		</>
+	);
 }
 
 export default App;

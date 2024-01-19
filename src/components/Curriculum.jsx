@@ -1,13 +1,10 @@
-import { EducationSection } from "./EducationSection";
-import { GeneralSection } from "./GeneralSection";
-import { LaboralExperienceSection } from "./PracticalExperienceSection";
 
-export function Curriculum() {
+export function Curriculum({ generalInfo, experienceRecords }) {
 	return (
-		<div>
-			<GeneralSection></GeneralSection>
-			<EducationSection></EducationSection>
-			<LaboralExperienceSection></LaboralExperienceSection>
+		<div className="curriculum-container">
+			<div className="curriculum">
+				</div>
+			</div>
 		</div>
 	);
 }
