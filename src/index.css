@@ -7,6 +7,9 @@
 	--secondary-text-color: #767676;
 	--primary-color: white;
 	--secondary-color: #d9dedf;
+
+	--form-primary-gap: 4em;
+	--form-secondary-gap: 2em;
 }
 
 * {

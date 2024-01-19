@@ -1,0 +1,15 @@
+.curriculum-form {
+	background-color: var(--primary-color);
+	padding: 2em;
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--form-primary-gap);
+
+}
+
+.curriculum-form > div {
+	text-align: left;
+	display: grid;
+	gap: var(--form-secondary-gap);
+}

@@ -1,0 +1,10 @@
+.curriculum-container {
+	padding: 4em;
+}
+
+.curriculum {
+	aspect-ratio: 1/1.41;
+	background-color: var(--primary-color);
+	text-align: center;
+	padding: 25px;
+}
