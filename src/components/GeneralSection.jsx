@@ -1,9 +1,29 @@
-export function GeneralSection() {
+import { Input } from "./Input";
+
+export function GeneralSection({ onUpdate }) {
 	return (
 		<div>
-			<input type="text"></input>
-			<input type="email"></input>
-			<input type="tel"></input>
+			<h2>Personal Information</h2>
+			<div className="inputs-container">
+				<Input
+					changeCallback={onUpdate}
+					label={"Name"}
+					name={"name"}
+					type="text"
+				></Input>
+				<Input
+					changeCallback={onUpdate}
+					label={"Email"}
+					name={"email"}
+					type="email"
+				></Input>
+				<Input
+					changeCallback={onUpdate}
+					label={"Phone"}
+					name={"phone"}
+					type="tel"
+				></Input>
+			</div>
 		</div>
 	);
 }
