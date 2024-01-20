@@ -1,6 +1,9 @@
-import { JobInstance } from "./JobInstance";
+import { ExperienceInstance } from "./ExperienceInstance";
 
 export function WorkExperienceSection({
+	isFormOpen,
+	openFormId,
+	openFormCallback,
 	saveFormCallback,
 	experienceRecords,
 }) {
@@ -13,6 +16,12 @@ export function WorkExperienceSection({
 						return (
 							<ExperienceInstance
 								key={record.id}
+								isEditing={
+									isFormOpen && record.id === openFormId
+								}
+								editCallback={() =>
+									openFormCallback(1, record.id)
+								}
 								saveCallback={saveFormCallback}
 								data={record}
 							></ExperienceInstance>
@@ -20,10 +29,21 @@ export function WorkExperienceSection({
 					})}
 				</ul>
 			)}
+			{isFormOpen ? (
+				openFormId === null && (
 					<ExperienceInstance
 						isEditing={true}
 						saveCallback={saveFormCallback}
 					></ExperienceInstance>
+				)
+			) : (
+				<button
+					onClick={() => {
+						openFormCallback(1, null);
+					}}
+				>
+					Add
+				</button>
 			)}
 		</div>
 	);
