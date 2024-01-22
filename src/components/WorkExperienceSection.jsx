@@ -10,9 +10,9 @@ export function WorkExperienceSection({
 	const sectionContainer = (
 		<div>
 			<h2>Work Experience</h2>
-			{experienceRecords.length > 0 && (
+			{records.length > 0 && (
 				<ul>
-					{experienceRecords.map((record) => {
+					{records.map((record) => {
 						return (
 							<ExperienceInstance
 								key={record.id}

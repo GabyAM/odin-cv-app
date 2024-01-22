@@ -1,10 +1,19 @@
 import { EducationInstance } from "./EducationInstance";
 
-export function EducationSection() {
+export function EducationSection({
+	isFormOpen,
+	openFormId,
+	openFormCallback,
+}) {
 	return (
 		<div>
-			<EducationInstance></EducationInstance>
-			<button>Add</button>
+			{isFormOpen && openFormId === null ? (
+				<EducationInstance
+					isEditing={true}
+				></EducationInstance>
+			) : (
+				<button onClick={() => openFormCallback(0, null)}>Add</button>
+			)}
 		</div>
 	);
 }

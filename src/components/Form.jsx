@@ -27,6 +27,9 @@ export function Form({
 		<div className="curriculum-form">
 			<GeneralSection onUpdate={onGeneralInfoUpdate}></GeneralSection>
 			<EducationSection
+				isFormOpen={openForm.index === 0}
+				openFormId={openForm.id}
+				openFormCallback={onOpenForm}
 			></EducationSection>
 			<WorkExperienceSection
 				isFormOpen={openForm.index === 1}
