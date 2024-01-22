@@ -5,8 +5,9 @@ import { useState } from "react";
 
 export function Form({
 	onGeneralInfoUpdate,
-	onExperienceRecordAdd,
+	onRecordAdd,
 	experienceRecords,
+	educationRecords,
 }) {
 	const [openForm, setOpenForm] = useState({ index: null, id: null });
 
@@ -18,9 +19,13 @@ export function Form({
 		setOpenForm({ index: null, id: null });
 	}
 
-	function onSaveForm(e) {
+	function onExperienceRecordSave(e) {
 		onCloseForm();
-		onExperienceRecordAdd(e);
+		onRecordAdd(e, "experience");
+	}
+	function onEducationRecordSave(e) {
+		onCloseForm();
+		onRecordAdd(e, "education");
 	}
 
 	return (
@@ -30,13 +35,15 @@ export function Form({
 				isFormOpen={openForm.index === 0}
 				openFormId={openForm.id}
 				openFormCallback={onOpenForm}
+				saveFormCallback={onEducationRecordSave}
+				records={educationRecords}
 			></EducationSection>
 			<WorkExperienceSection
 				isFormOpen={openForm.index === 1}
 				openFormId={openForm.id}
 				openFormCallback={onOpenForm}
-				saveFormCallback={onSaveForm}
-				experienceRecords={experienceRecords}
+				saveFormCallback={onExperienceRecordSave}
+				records={experienceRecords}
 			></WorkExperienceSection>
 		</div>
 	);

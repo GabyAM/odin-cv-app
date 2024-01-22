@@ -5,7 +5,7 @@ export function WorkExperienceSection({
 	openFormId,
 	openFormCallback,
 	saveFormCallback,
-	experienceRecords,
+	records,
 }) {
 	const sectionContainer = (
 		<div>
