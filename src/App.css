@@ -2,7 +2,4 @@ body {
 	background-color: var(--bg-color);
 }
 
-#root {
-	display: grid;
-	grid-template-columns: 1fr 2.5fr;
 }

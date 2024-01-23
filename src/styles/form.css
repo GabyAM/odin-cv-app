@@ -1,12 +1,10 @@
 .curriculum-form {
 	background-color: var(--primary-color);
-	padding: 2em;
-
-	display: flex;
-	flex-direction: column;
-	gap: var(--form-primary-gap);
-
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+	position: fixed;
+	width: 28%;
+	overflow-y: auto;
+	height: 100vh;
 }
 
 .curriculum-form > div {
