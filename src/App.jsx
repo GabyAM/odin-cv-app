@@ -21,9 +21,15 @@ function App() {
 	function updateRecords(e, recordType) {
 		e.preventDefault();
 		const formData = new FormData(e.target);
-		let newRecord = {};
+		let newRecord = { startDate: {}, endDate: {} };
 		formData.forEach((value, key) => {
-			newRecord[kebabToCamel(key)] = value;
+			if (key.includes("start")) {
+				let propertyName = key.slice(6);
+				newRecord.startDate[propertyName] = value;
+			} else if (key.includes("end")) {
+				let propertyName = key.slice(4);
+				newRecord.endDate[propertyName] = value;
+			} else newRecord[kebabToCamel(key)] = value;
 		});
 		console.log(newRecord);
 		const id = formData.get("id");

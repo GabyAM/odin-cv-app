@@ -8,3 +8,12 @@ export function camelToKebab(string) {
 		($, ofs) => (ofs ? "-" : "") + $.toLowerCase()
 	);
 }
+
+export function getLastEightyYears() {
+	const years = [];
+	let currentYear = new Date().getFullYear();
+	for (let i = 0; i < 80; i++) {
+		years.push(currentYear--);
+	}
+	return years;
+}

@@ -1,10 +1,13 @@
 import { Input } from "./Input";
 import { camelToKebab } from "../utilities";
+import { DateInput } from "./DateInput";
 
 function EditingInstance({ submitCallback, data, fields }) {
 	if (!data) {
 		data = fields.reduce((obj, field) => {
-			obj[field.name] = "";
+			if (field.type === "date") {
+				obj[field.name] = { year: "", month: "" };
+			} else obj[field.name] = "";
 			return obj;
 		}, {});
 	}
@@ -17,6 +20,15 @@ function EditingInstance({ submitCallback, data, fields }) {
 					{field.label}
 					<textarea defaultValue={fieldValue}></textarea>
 				</label>
+			);
+		} else if (field.type === "date") {
+			return (
+				<DateInput
+					key={field.name}
+					label={field.label}
+					yearValue={fieldValue.year}
+					monthValue={fieldValue.month}
+				></DateInput>
 			);
 		} else {
 			return (
@@ -34,6 +46,7 @@ function EditingInstance({ submitCallback, data, fields }) {
 	return (
 		<form className="record-container" onSubmit={submitCallback}>
 			<fieldset className="inputs-container">
+				<Input type={"hidden"} value={data.id} name={"id"}></Input>
 				{fields.map((field) => renderField(field))}
 			</fieldset>
 			<button type="button">
