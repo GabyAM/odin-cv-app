@@ -2,4 +2,19 @@ body {
 	background-color: var(--bg-color);
 }
 
+@supports selector(::-webkit-scrollbar) {
+	::-webkit-scrollbar {
+		width: 0.625em;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: var(--secondary-color);
+		margin-block: 0.25em;
+		border-radius: 100vw;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: var(--secondary-text-color);
+		border-radius: 100vw;
+	}
 }
