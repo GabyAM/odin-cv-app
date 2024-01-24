@@ -1,5 +1,6 @@
 import { Input } from "./Input";
 import { camelToKebab } from "../utilities";
+import { TextArea } from "./TextArea";
 import { DateInput } from "./DateInput";
 
 function EditingInstance({ submitCallback, data, fields }) {
@@ -16,10 +17,12 @@ function EditingInstance({ submitCallback, data, fields }) {
 		const fieldValue = data[field.name];
 		if (field.type === "textarea") {
 			return (
-				<label key={field.name}>
-					{field.label}
-					<textarea defaultValue={fieldValue}></textarea>
-				</label>
+				<TextArea
+					key={field.name}
+					label={field.label}
+					name={field.name}
+					value={fieldValue}
+				></TextArea>
 			);
 		} else if (field.type === "date") {
 			return (
