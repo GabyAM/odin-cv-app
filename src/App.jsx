@@ -1,4 +1,5 @@
 import { Form } from "./components/Form";
+import "./App.css";
 import { Curriculum } from "./components/Curriculum";
 import { useState } from "react";
 import { kebabToCamel } from "./utilities";
@@ -81,6 +82,9 @@ function App() {
 				educationRecords={educationRecords}
 			></Form>
 			<Curriculum
+				generalInfo={generalInfo}
+				educationRecords={educationRecords}
+				experienceRecords={experienceRecords}
 			></Curriculum>
 		</>
 	);

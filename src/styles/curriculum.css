@@ -9,5 +9,26 @@
 	aspect-ratio: 1/1.41;
 	background-color: var(--primary-color);
 	text-align: center;
-	padding: 25px;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	margin: auto;
+}
+
+.header {
+	background-color: #033a6d;
+	padding: 2.5em 2em;
+}
+
+.header h1,
+.header span,
+.header p {
+	color: white;
+}
+
+.icon-container {
+	display: block;
+	width: 28px;
+	height: 28px;
+}
+
 }

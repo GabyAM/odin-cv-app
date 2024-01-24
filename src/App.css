@@ -14,6 +14,9 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+.semi-spaced {
+	justify-content: space-around;
+}
 .spaced {
 	justify-content: space-between;
 }
