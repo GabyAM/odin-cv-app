@@ -53,6 +53,7 @@ function EditingInstance({ submitCallback, data, fields }) {
 				{fields.map((field) => renderField(field))}
 			</fieldset>
 			<button type="button">
+				<DeleteIcon></DeleteIcon>
 			</button>
 			<button>Add</button>
 		</form>
@@ -79,6 +80,7 @@ export function Instance({
 					<h3>{data[fields[0].name]}</h3>
 					<span>{data[fields[1].name]}</span>
 					<button onClick={editCallback}>
+						<EditIcon></EditIcon>
 					</button>
 				</div>
 			)}
