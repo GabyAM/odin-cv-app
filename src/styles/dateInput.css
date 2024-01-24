@@ -1,0 +1,7 @@
+.date-input > * {
+	flex: 1;
+}
+
+select option:first-of-type {
+	display: none;
+}
