@@ -1,6 +1,7 @@
 import { EducationSection } from "./EducationSection";
 import { GeneralSection } from "./GeneralSection";
 import { WorkExperienceSection } from "./WorkExperienceSection";
+import "../styles/form.css";
 import { useState } from "react";
 
 export function Form({
@@ -29,7 +30,7 @@ export function Form({
 	}
 
 	return (
-		<div className="curriculum-form">
+		<div className="curriculum-form flex-cols">
 			<GeneralSection onUpdate={onGeneralInfoUpdate}></GeneralSection>
 			<EducationSection
 				isFormOpen={openForm.index === 0}

@@ -2,6 +2,25 @@ body {
 	background-color: var(--bg-color);
 }
 
+.flex-rows {
+	display: flex;
+	flex-direction: row;
+}
+.rows-centered {
+	align-items: center;
+}
+
+.flex-cols {
+	display: flex;
+	flex-direction: column;
+}
+.spaced {
+	justify-content: space-between;
+}
+.small-gap {
+	gap: 0.5rem;
+}
+
 @supports selector(::-webkit-scrollbar) {
 	::-webkit-scrollbar {
 		width: 0.625em;

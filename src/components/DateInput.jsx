@@ -41,7 +41,7 @@ export function DateInput({ label, monthValue, yearValue }) {
 	return (
 		<label>
 			{label}
-			<div className="date-input">
+			<div className="date-input flex-rows small-gap">
 				<MonthInput
 					value={monthValue}
 					name={`${namePrefix}-month`}
