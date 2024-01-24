@@ -1,12 +1,12 @@
-import "../styles/textarea.css";
-
-export function TextArea({ label, name, value }) {
+export function TextArea({ label, name, value, changeCallback }) {
 	return (
 		<label>
 			{label}
-			<textarea name={name} defaultValue={value}></textarea>
+			<textarea
+				name={name}
+				defaultValue={value}
+				onChange={changeCallback}
+			></textarea>
 		</label>
 	);
 }
-
-// •

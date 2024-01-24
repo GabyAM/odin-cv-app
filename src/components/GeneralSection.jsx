@@ -23,6 +23,11 @@ export function GeneralSection({ onUpdate }) {
 					name={"phone"}
 					type="tel"
 				></Input>
+				<TextArea
+					changeCallback={onUpdate}
+					label={"Profile"}
+					name={"profile"}
+				></TextArea>
 			</div>
 		</div>
 	);
