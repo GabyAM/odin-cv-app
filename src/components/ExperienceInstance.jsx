@@ -16,6 +16,7 @@ export function ExperienceInstance({
 	isEditing,
 	editCallback,
 	saveCallback,
+	onDelete,
 	data,
 }) {
 	return (
@@ -23,6 +24,7 @@ export function ExperienceInstance({
 			isEditing={isEditing}
 			editCallback={editCallback}
 			saveCallback={saveCallback}
+			onDelete={onDelete}
 			data={data}
 			fields={experienceFields}
 		></Instance>

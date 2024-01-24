@@ -18,6 +18,27 @@ function App() {
 		setGeneralInfo({ ...generalInfo, [name]: value });
 	}
 
+	function getRecordState(recordType) {
+		let records;
+		let setRecords;
+		if (recordType === "experience") {
+			records = experienceRecords;
+			setRecords = setExperienceRecords;
+		} else {
+			records = educationRecords;
+			setRecords = setEducationRecords;
+		}
+		return { records, setRecords };
+	}
+
+	function deleteRecord(id, recordType) {
+		console.log("record deleted!");
+		const { records, setRecords } = getRecordState(recordType);
+
+		const newRecords = [...records].filter((record) => record.id !== id);
+		setRecords(newRecords);
+	}
+
 	function updateRecords(e, recordType) {
 		e.preventDefault();
 		const formData = new FormData(e.target);
@@ -34,15 +55,8 @@ function App() {
 		console.log(newRecord);
 		const id = formData.get("id");
 
-		let records;
-		let setRecords;
-		if (recordType === "experience") {
-			records = experienceRecords;
-			setRecords = setExperienceRecords;
-		} else {
-			records = educationRecords;
-			setRecords = setEducationRecords;
-		}
+		const { records, setRecords } = getRecordState(recordType);
+
 		if (id) {
 			const newExperienceRecords = [...records];
 			const elementIndex = newExperienceRecords.findIndex(
@@ -62,7 +76,9 @@ function App() {
 			<Form
 				onGeneralInfoUpdate={updateGeneralInfo}
 				onRecordAdd={updateRecords}
+				onRecordDelete={deleteRecord}
 				experienceRecords={experienceRecords}
+				educationRecords={educationRecords}
 			></Form>
 			<Curriculum
 			></Curriculum>

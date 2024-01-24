@@ -12,6 +12,7 @@ export function EducationInstance({
 	data,
 	saveCallback,
 	editCallback,
+	onDelete,
 }) {
 	return (
 		<Instance
@@ -19,6 +20,7 @@ export function EducationInstance({
 			data={data}
 			saveCallback={saveCallback}
 			editCallback={editCallback}
+			onDelete={onDelete}
 			fields={educationFields}
 		></Instance>
 	);

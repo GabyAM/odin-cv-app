@@ -5,6 +5,8 @@ export function WorkExperienceSection({
 	openFormId,
 	openFormCallback,
 	saveFormCallback,
+	onCloseForm,
+	onDelete,
 	records,
 }) {
 	const sectionContainer = (
@@ -23,6 +25,7 @@ export function WorkExperienceSection({
 									openFormCallback(1, record.id)
 								}
 								saveCallback={saveFormCallback}
+								onDelete={() => onDelete(record.id)}
 								data={record}
 							></ExperienceInstance>
 						);
@@ -34,6 +37,7 @@ export function WorkExperienceSection({
 					<ExperienceInstance
 						isEditing={true}
 						saveCallback={saveFormCallback}
+						onDelete={onCloseForm}
 					></ExperienceInstance>
 				)
 			) : (

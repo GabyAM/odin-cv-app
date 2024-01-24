@@ -5,6 +5,8 @@ export function EducationSection({
 	openFormId,
 	openFormCallback,
 	saveFormCallback,
+	onCloseForm,
+	onDelete,
 	records,
 }) {
 	return (
@@ -23,6 +25,7 @@ export function EducationSection({
 									openFormCallback(1, record.id)
 								}
 								saveCallback={saveFormCallback}
+								onDelete={onDelete}
 								data={record}
 							></EducationInstance>
 						);
@@ -33,6 +36,7 @@ export function EducationSection({
 				<EducationInstance
 					isEditing={true}
 					saveCallback={saveFormCallback}
+					onDelete={onCloseForm}
 				></EducationInstance>
 			) : (
 				<button onClick={() => openFormCallback(0, null)}>Add</button>

@@ -3,7 +3,7 @@ import { camelToKebab } from "../utilities";
 import { TextArea } from "./TextArea";
 import { DateInput } from "./DateInput";
 
-function EditingInstance({ submitCallback, data, fields }) {
+function EditingInstance({ submitCallback, onDelete, data, fields }) {
 	if (!data) {
 		data = fields.reduce((obj, field) => {
 			if (field.type === "date") {
@@ -52,10 +52,16 @@ function EditingInstance({ submitCallback, data, fields }) {
 				<Input type={"hidden"} value={data.id} name={"id"}></Input>
 				{fields.map((field) => renderField(field))}
 			</fieldset>
-			<button type="button">
-				<DeleteIcon></DeleteIcon>
-			</button>
-			<button>Add</button>
+			<div className="form-buttons-container">
+				<button
+					onClick={() => onDelete}
+					type="button"
+					className="secondary-button"
+				>
+				</button>
+				<button className="add-button">
+				</button>
+			</div>
 		</form>
 	);
 }
@@ -64,6 +70,7 @@ export function Instance({
 	isEditing,
 	editCallback,
 	saveCallback,
+	onDelete,
 	data,
 	fields,
 }) {
@@ -72,6 +79,7 @@ export function Instance({
 			{isEditing ? (
 				<EditingInstance
 					submitCallback={saveCallback}
+					onDelete={onDelete}
 					data={data}
 					fields={fields}
 				></EditingInstance>

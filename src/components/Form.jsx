@@ -7,6 +7,7 @@ import { useState } from "react";
 export function Form({
 	onGeneralInfoUpdate,
 	onRecordAdd,
+	onRecordDelete,
 	experienceRecords,
 	educationRecords,
 }) {
@@ -29,6 +30,15 @@ export function Form({
 		onRecordAdd(e, "education");
 	}
 
+	function onExperienceRecordDelete(id) {
+		onCloseForm();
+		onRecordDelete(id, "experience");
+	}
+	function onEducationRecordDelete(id) {
+		onCloseForm();
+		onRecordDelete(id, "education");
+	}
+
 	return (
 		<div className="curriculum-form flex-cols">
 			<GeneralSection onUpdate={onGeneralInfoUpdate}></GeneralSection>
@@ -37,6 +47,8 @@ export function Form({
 				openFormId={openForm.id}
 				openFormCallback={onOpenForm}
 				saveFormCallback={onEducationRecordSave}
+				onCloseForm={onCloseForm}
+				onDelete={onEducationRecordDelete}
 				records={educationRecords}
 			></EducationSection>
 			<WorkExperienceSection
@@ -44,6 +56,8 @@ export function Form({
 				openFormId={openForm.id}
 				openFormCallback={onOpenForm}
 				saveFormCallback={onExperienceRecordSave}
+				onCloseForm={onCloseForm}
+				onDelete={onExperienceRecordDelete}
 				records={experienceRecords}
 			></WorkExperienceSection>
 		</div>
