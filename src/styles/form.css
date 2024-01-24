@@ -51,6 +51,16 @@ button {
 }
 textarea {
 	resize: none;
+.add-button {
+	aspect-ratio: 2/1;
+	max-width: 80px;
+}
+
+.secondary-button {
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	background-color: var(--secondary-color);
 }
 button:hover {
 	transition: transform 0.1s ease-in-out;

@@ -1,5 +1,6 @@
 import { Input } from "./Input";
 import { camelToKebab } from "../utilities";
+import { CloseIcon, DeleteIcon, EditIcon } from "./Icons";
 import { TextArea } from "./TextArea";
 import { DateInput } from "./DateInput";
 
@@ -58,8 +59,14 @@ function EditingInstance({ submitCallback, onDelete, data, fields }) {
 					type="button"
 					className="secondary-button"
 				>
+					{data.id ? (
+						<DeleteIcon></DeleteIcon>
+					) : (
+						<CloseIcon></CloseIcon>
+					)}
 				</button>
 				<button className="add-button">
+					{data.id ? "Update" : "Add"}
 				</button>
 			</div>
 		</form>
