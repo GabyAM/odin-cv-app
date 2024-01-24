@@ -1,8 +1,7 @@
-import { EducationSection } from "./EducationSection";
 import { GeneralSection } from "./GeneralSection";
-import { WorkExperienceSection } from "./WorkExperienceSection";
 import "../styles/form.css";
 import { useState } from "react";
+import { FormRecordsSection } from "./FormRecordsSection";
 
 export function Form({
 	onGeneralInfoUpdate,
@@ -11,14 +10,14 @@ export function Form({
 	experienceRecords,
 	educationRecords,
 }) {
-	const [openForm, setOpenForm] = useState({ index: null, id: null });
+	const [openForm, setOpenForm] = useState({ sectionName: "", id: null });
 
-	function onOpenForm(index, id) {
-		setOpenForm({ index, id });
+	function onOpenForm(sectionName, id) {
+		setOpenForm({ sectionName, id });
 	}
 
 	function onCloseForm() {
-		setOpenForm({ index: null, id: null });
+		setOpenForm({ sectionName: "", id: null });
 	}
 
 	function onExperienceRecordSave(e) {
@@ -42,24 +41,24 @@ export function Form({
 	return (
 		<div className="curriculum-form flex-cols">
 			<GeneralSection onUpdate={onGeneralInfoUpdate}></GeneralSection>
-			<EducationSection
-				isFormOpen={openForm.index === 0}
-				openFormId={openForm.id}
+			<FormRecordsSection
+				sectionName={"education"}
+				openForm={openForm}
 				onOpenForm={onOpenForm}
 				onCloseForm={onCloseForm}
 				onSaveForm={onEducationRecordSave}
 				onDelete={onEducationRecordDelete}
 				records={educationRecords}
-			></EducationSection>
-			<WorkExperienceSection
-				isFormOpen={openForm.index === 1}
-				openFormId={openForm.id}
+			></FormRecordsSection>
+			<FormRecordsSection
+				sectionName={"workExperience"}
+				openForm={openForm}
 				onOpenForm={onOpenForm}
 				onCloseForm={onCloseForm}
 				onSaveForm={onExperienceRecordSave}
 				onDelete={onExperienceRecordDelete}
 				records={experienceRecords}
-			></WorkExperienceSection>
+			></FormRecordsSection>
 		</div>
 	);
 }
