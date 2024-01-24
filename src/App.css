@@ -23,6 +23,12 @@ body {
 .small-gap {
 	gap: 0.5rem;
 }
+.medium-gap {
+	gap: var(--form-secondary-gap);
+}
+.large-gap {
+	gap: var(--form-primary-gap);
+}
 
 @supports selector(::-webkit-scrollbar) {
 	::-webkit-scrollbar {
