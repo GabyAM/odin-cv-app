@@ -45,18 +45,18 @@ export function Form({
 			<EducationSection
 				isFormOpen={openForm.index === 0}
 				openFormId={openForm.id}
-				openFormCallback={onOpenForm}
-				saveFormCallback={onEducationRecordSave}
+				onOpenForm={onOpenForm}
 				onCloseForm={onCloseForm}
+				onSaveForm={onEducationRecordSave}
 				onDelete={onEducationRecordDelete}
 				records={educationRecords}
 			></EducationSection>
 			<WorkExperienceSection
 				isFormOpen={openForm.index === 1}
 				openFormId={openForm.id}
-				openFormCallback={onOpenForm}
-				saveFormCallback={onExperienceRecordSave}
+				onOpenForm={onOpenForm}
 				onCloseForm={onCloseForm}
+				onSaveForm={onExperienceRecordSave}
 				onDelete={onExperienceRecordDelete}
 				records={experienceRecords}
 			></WorkExperienceSection>

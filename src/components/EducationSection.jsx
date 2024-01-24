@@ -3,9 +3,9 @@ import { EducationInstance } from "./EducationInstance";
 export function EducationSection({
 	isFormOpen,
 	openFormId,
-	openFormCallback,
-	saveFormCallback,
+	onOpenForm,
 	onCloseForm,
+	onSaveForm,
 	onDelete,
 	records,
 }) {
@@ -21,10 +21,8 @@ export function EducationSection({
 								isEditing={
 									isFormOpen && record.id === openFormId
 								}
-								editCallback={() =>
-									openFormCallback(1, record.id)
-								}
-								saveCallback={saveFormCallback}
+								onEdit={() => onOpenForm(0, record.id)}
+								onSave={onSaveForm}
 								onDelete={onDelete}
 								data={record}
 							></EducationInstance>
@@ -35,11 +33,16 @@ export function EducationSection({
 			{isFormOpen && openFormId === null ? (
 				<EducationInstance
 					isEditing={true}
-					saveCallback={saveFormCallback}
+					onSave={onSaveForm}
 					onDelete={onCloseForm}
 				></EducationInstance>
 			) : (
-				<button onClick={() => openFormCallback(0, null)}>Add</button>
+				<button
+					className="add-button"
+					onClick={() => onOpenForm(0, null)}
+				>
+					Add
+				</button>
 			)}
 		</div>
 	);

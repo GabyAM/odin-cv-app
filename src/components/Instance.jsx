@@ -68,8 +68,8 @@ function EditingInstance({ submitCallback, onDelete, data, fields }) {
 
 export function Instance({
 	isEditing,
-	editCallback,
-	saveCallback,
+	onEdit,
+	onSave,
 	onDelete,
 	data,
 	fields,
@@ -78,7 +78,7 @@ export function Instance({
 		<>
 			{isEditing ? (
 				<EditingInstance
-					submitCallback={saveCallback}
+					submitCallback={onSave}
 					onDelete={onDelete}
 					data={data}
 					fields={fields}
@@ -87,7 +87,7 @@ export function Instance({
 				<div className="record-container">
 					<h3>{data[fields[0].name]}</h3>
 					<span>{data[fields[1].name]}</span>
-					<button onClick={editCallback}>
+					<button onClick={onEdit}>
 						<EditIcon></EditIcon>
 					</button>
 				</div>

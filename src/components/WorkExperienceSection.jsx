@@ -3,9 +3,9 @@ import { ExperienceInstance } from "./ExperienceInstance";
 export function WorkExperienceSection({
 	isFormOpen,
 	openFormId,
-	openFormCallback,
-	saveFormCallback,
+	onOpenForm,
 	onCloseForm,
+	onSaveForm,
 	onDelete,
 	records,
 }) {
@@ -21,11 +21,9 @@ export function WorkExperienceSection({
 								isEditing={
 									isFormOpen && record.id === openFormId
 								}
-								editCallback={() =>
-									openFormCallback(1, record.id)
-								}
-								saveCallback={saveFormCallback}
+								onEdit={() => onOpenForm(1, record.id)}
 								onDelete={() => onDelete(record.id)}
+								onSave={onSaveForm}
 								data={record}
 							></ExperienceInstance>
 						);
@@ -36,14 +34,15 @@ export function WorkExperienceSection({
 				openFormId === null && (
 					<ExperienceInstance
 						isEditing={true}
-						saveCallback={saveFormCallback}
+						onSave={onSaveForm}
 						onDelete={onCloseForm}
 					></ExperienceInstance>
 				)
 			) : (
 				<button
+					className="add-button"
 					onClick={() => {
-						openFormCallback(1, null);
+						onOpenForm(1, null);
 					}}
 				>
 					Add

@@ -14,16 +14,16 @@ const experienceFields = [
 
 export function ExperienceInstance({
 	isEditing,
-	editCallback,
-	saveCallback,
+	onEdit,
+	onSave,
 	onDelete,
 	data,
 }) {
 	return (
 		<Instance
 			isEditing={isEditing}
-			editCallback={editCallback}
-			saveCallback={saveCallback}
+			onEdit={onEdit}
+			onSave={onSave}
 			onDelete={onDelete}
 			data={data}
 			fields={experienceFields}

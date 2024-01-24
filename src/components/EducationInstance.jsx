@@ -10,16 +10,16 @@ const educationFields = [
 export function EducationInstance({
 	isEditing,
 	data,
-	saveCallback,
-	editCallback,
+	onSave,
 	onDelete,
+	onEdit,
 }) {
 	return (
 		<Instance
 			isEditing={isEditing}
 			data={data}
-			saveCallback={saveCallback}
-			editCallback={editCallback}
+			onSave={onSave}
+			onEdit={onEdit}
 			onDelete={onDelete}
 			fields={educationFields}
 		></Instance>
