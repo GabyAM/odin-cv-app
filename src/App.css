@@ -46,3 +46,16 @@ body {
 		border-radius: 100vw;
 	}
 }
+
+@media (max-width: 1000px) {
+	.large-gap {
+		gap: 1rem;
+	}
+	.medium-gap {
+		gap: 0.5rem;
+	}
+	.small-gap {
+		gap: 0.25rem;
+	}
+}
+

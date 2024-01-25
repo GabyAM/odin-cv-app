@@ -116,3 +116,10 @@ textarea {
 form label:first-of-type {
 	display: none;
 }
+
+@media (max-width: 1000px) {
+	.curriculum-form {
+		width: 50%;
+	}
+}
+
