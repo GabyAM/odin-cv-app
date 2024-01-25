@@ -23,6 +23,12 @@
 .header {
 	background-color: #033a6d;
 	padding: 2.5em 2em;
+	overflow: hidden;
+}
+.header h1 {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .main {
