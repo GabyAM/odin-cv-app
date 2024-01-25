@@ -40,6 +40,7 @@
 .curriculum-form ul {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: var(--form-secondary-gap);
 }
 button {
@@ -49,8 +50,6 @@ button {
 	padding: 0.5em;
 	font-weight: bold;
 }
-textarea {
-	resize: none;
 .add-button {
 	aspect-ratio: 2/1;
 	max-width: 80px;
@@ -68,11 +67,18 @@ button:hover {
 }
 
 input,
-textarea {
+textarea,
+select {
 	background-color: var(--secondary-color);
 	border: none;
 	border-radius: 0.3rem;
 	height: 24px;
+}
+
+textarea {
+	min-height: 24px;
+	height: 80px;
+	resize: vertical;
 }
 
 .record-container {
@@ -83,6 +89,14 @@ textarea {
 	padding: 0.5rem 1rem;
 	display: grid;
 	gap: var(--form-secondary-gap);
+}
+
+.record-container.saved {
+	grid-template-columns: 4fr 1fr;
+	align-items: center;
+}
+.record-container.saved button {
+	justify-self: center;
 }
 
 .form-buttons-container {

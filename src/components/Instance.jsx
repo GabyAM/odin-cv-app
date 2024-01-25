@@ -91,10 +91,12 @@ export function Instance({
 					fields={fields}
 				></EditingInstance>
 			) : (
-				<div className="record-container">
-					<h3>{data[fields[0].name]}</h3>
-					<span>{data[fields[1].name]}</span>
-					<button onClick={onEdit}>
+				<div className="record-container saved">
+					<div>
+						<h3>{data[fields[0].name]}</h3>
+						<span>{data[fields[1].name]}</span>
+					</div>
+					<button onClick={onEdit} className="secondary-button">
 						<EditIcon></EditIcon>
 					</button>
 				</div>
