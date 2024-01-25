@@ -30,6 +30,21 @@ body {
 	gap: var(--form-primary-gap);
 }
 
+button {
+	background-color: var(--accent-color);
+	border-radius: 100vw;
+	border: none;
+	padding: 0.5em;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+button:hover {
+	transition: transform 0.1s ease-in-out;
+	transform: scale(1.05);
+}
+
 .show-curriculum-button {
 	display: none;
 	position: fixed;
