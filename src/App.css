@@ -30,6 +30,17 @@ body {
 	gap: var(--form-primary-gap);
 }
 
+.show-curriculum-button {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 120px;
+	height: 60px;
+	font-size: 18px;
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 @supports selector(::-webkit-scrollbar) {
 	::-webkit-scrollbar {
 		width: 0.625em;
@@ -59,3 +70,17 @@ body {
 	}
 }
 
+@media (max-width: 600px) {
+	.large-gap {
+		gap: 0.7rem;
+	}
+	.medium-gap {
+		gap: 0.35rem;
+	}
+	.small-gap {
+		gap: 0.15rem;
+	}
+	.show-curriculum-button {
+		display: block;
+	}
+}

@@ -116,4 +116,21 @@ li p {
 	}
 }
 
+@media (max-width: 600px) {
+	.curriculum-container {
+		margin-left: 0%;
+		padding: 1.5em;
+	}
+	.header h1 {
+		font-size: 10px;
+	}
+	.main {
+		padding: 0.8em 1.6em;
+	}
+	.main h2 {
+		font-size: 8px;
+	}
+	.main p {
+		margin: 0.25rem 0;
+	}
 }

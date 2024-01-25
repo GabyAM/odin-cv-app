@@ -9,6 +9,7 @@ export function Form({
 	onRecordDelete,
 	experienceRecords,
 	educationRecords,
+	isVisible,
 }) {
 	const [openForm, setOpenForm] = useState({ sectionName: "", id: null });
 
@@ -39,7 +40,11 @@ export function Form({
 	}
 
 	return (
-		<div className="curriculum-form flex-cols">
+		<div
+			className={
+				"curriculum-form flex-cols" + " " + (isVisible ? "show" : "")
+			}
+		>
 			<GeneralSection onUpdate={onGeneralInfoUpdate}></GeneralSection>
 			<FormRecordsSection
 				sectionName={"education"}

@@ -12,6 +12,7 @@ function App() {
 	});
 	const [experienceRecords, setExperienceRecords] = useState([]);
 	const [educationRecords, setEducationRecords] = useState([]);
+	const [isFormVisible, setIsFormVisible] = useState(null);
 
 	function updateGeneralInfo(e) {
 		const { name, value } = e.target;
@@ -80,12 +81,19 @@ function App() {
 				onRecordDelete={deleteRecord}
 				experienceRecords={experienceRecords}
 				educationRecords={educationRecords}
+				isVisible={isFormVisible}
 			></Form>
 			<Curriculum
 				generalInfo={generalInfo}
 				educationRecords={educationRecords}
 				experienceRecords={experienceRecords}
 			></Curriculum>
+			<button
+				onClick={() => setIsFormVisible(!isFormVisible)}
+				className="show-curriculum-button"
+			>
+				{isFormVisible ? "Hide form" : "Show form"}
+			</button>
 		</>
 	);
 }
