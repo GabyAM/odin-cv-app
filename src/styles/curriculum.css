@@ -17,7 +17,6 @@
 	display: grid;
 	grid-template-rows: 1fr 4fr;
 	margin: auto;
-	overflow-wrap: anywhere;
 	overflow: hidden;
 }
 
@@ -29,6 +28,7 @@
 .main {
 	padding: 2.5em 5em;
 	text-align: left;
+	overflow-wrap: anywhere;
 }
 
 .main h3 {
@@ -50,6 +50,18 @@ li p {
 .header span,
 .header p {
 	color: white;
+}
+
+.contact-container {
+	flex-shrink: 1;
+	max-width: 40%;
+	white-space: nowrap;
+	display: grid;
+	grid-template-columns: 30px auto;
+}
+.contact-container span {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .icon-container {

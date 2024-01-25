@@ -22,7 +22,7 @@ export function CurriculumRecord({
 					endDate={endDate}
 				></PeriodSpan>
 			</div>
-			<p>{text}</p>
+			{text && <p>{text}</p>}
 		</li>
 	);
 }
