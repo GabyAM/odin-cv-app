@@ -1,10 +1,15 @@
 .curriculum-container {
 	overflow-y: auto;
 	margin-left: 28%;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+	padding: 4em;
+	align-content: start;
 }
 
 .curriculum {
-	width: 90%;
+	width: 100%;
 	max-width: 900px;
 	aspect-ratio: 1/1.41;
 	background-color: var(--primary-color);
@@ -13,6 +18,7 @@
 	grid-template-rows: 1fr 4fr;
 	margin: auto;
 	overflow-wrap: anywhere;
+	overflow: hidden;
 }
 
 .header {
