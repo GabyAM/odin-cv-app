@@ -55,7 +55,9 @@ function EditingInstance({ submitCallback, onDelete, data, fields }) {
 			</fieldset>
 			<div className="form-buttons-container">
 				<button
-					onClick={() => onDelete}
+					onClick={() => {
+						onDelete();
+					}}
 					type="button"
 					className="secondary-button"
 				>

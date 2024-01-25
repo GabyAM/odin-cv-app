@@ -53,7 +53,7 @@ export function FormRecordsSection({
 									onOpenForm(sectionName, record.id)
 								}
 								onSave={onSaveForm}
-								onDelete={onDelete}
+								onDelete={() => onDelete(record.id)}
 								data={record}
 								fields={fields}
 							></Instance>

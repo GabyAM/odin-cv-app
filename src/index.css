@@ -29,3 +29,7 @@ html {
 body {
 	font-family: "Raleway", sans-serif;
 }
+
+fieldset {
+	border: none;
+}

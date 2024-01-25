@@ -1,4 +1,5 @@
 import { Input } from "./Input";
+import { TextArea } from "./TextArea";
 
 export function GeneralSection({ onUpdate }) {
 	return (

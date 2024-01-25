@@ -60,12 +60,12 @@ function App() {
 		const { records, setRecords } = getRecordState(recordType);
 
 		if (id) {
-			const newExperienceRecords = [...records];
-			const elementIndex = newExperienceRecords.findIndex(
+			const newRecords = [...records];
+			const elementIndex = newRecords.findIndex(
 				(record) => record.id === id
 			);
-			newExperienceRecords[elementIndex] = { ...newRecord };
-			setRecords(newExperienceRecords);
+			newRecords[elementIndex] = { ...newRecord };
+			setRecords(newRecords);
 		} else {
 			newRecord.id = crypto.randomUUID();
 			setRecords([...records, newRecord]);
