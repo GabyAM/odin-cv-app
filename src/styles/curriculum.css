@@ -30,6 +30,22 @@
 	padding: 2.5em 5em;
 	text-align: left;
 }
+
+.main h3 {
+	font-weight: 700;
+}
+
+li h3,
+li span,
+li p {
+	font-size: 16px;
+}
+
+li p {
+	margin: 1rem 0;
+	font-weight: 500;
+}
+
 .header h1,
 .header span,
 .header p {
@@ -40,6 +56,11 @@
 	display: block;
 	width: 28px;
 	height: 28px;
+}
+
+.period-span {
+	font-weight: light;
+	color: var(--secondary-text-color);
 }
 
 }
